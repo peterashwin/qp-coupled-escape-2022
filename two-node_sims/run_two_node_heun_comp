@@ -1,0 +1,14 @@
+#!/bin/bash
+
+for alpha in 0.05
+do
+	for beta in $(seq 0.31 0.01 0.39)
+	do
+  		echo alpha = $alpha , beta = $beta 
+  		matlab -nodisplay -nodesktop -r "alpha=$alpha;nu=0.01;beta=$beta;heun_comp;exit;" > /dev/null &
+                sleep 0.25
+  	done
+done
+
+
+  
